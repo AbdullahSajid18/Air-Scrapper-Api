@@ -1,5 +1,4 @@
-
-
+import PropTypes from "prop-types";
 
 const FlightCard = ({ flight }) => {
     return (
@@ -19,6 +18,18 @@ const FlightCard = ({ flight }) => {
         </a>
       </div>
     );
+  };
+  
+  FlightCard.propTypes = {
+    flight: PropTypes.shape({
+      airline: PropTypes.string,
+      price: PropTypes.string,
+      currency: PropTypes.string,
+      departure_time: PropTypes.string,
+      arrival_time: PropTypes.string,
+      stops: PropTypes.number,
+      deep_link: PropTypes.string,
+    }).isRequired,
   };
   
   export default FlightCard;
